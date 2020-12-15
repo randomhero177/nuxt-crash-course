@@ -2,8 +2,8 @@
     <section>
       <h1>Users</h1>
       <ul>
-        <li v-for="user of 5" :key="user">
-          <a href="#" @click.prevent="openUser(user)">USER {{ user }}</a>
+        <li v-for="user of usersList" :key="user.id">
+          <a href="#" @click.prevent="openUser(user.id)">{{ user.name }}</a>
         </li>
       </ul>
     </section>
@@ -11,12 +11,20 @@
 
 <script>
     export default {
-        name: "index",
-        methods: {
-          openUser(user) {
-            this.$router.push('/users/' + user)
-          }
+      async asyncData({$axios}) {
+        const usersList = await $axios.$get('https://jsonplaceholder.typicode.com/users');
+        return {usersList}
+      },
+      name: "index",
+      data: () => ({
+        usersList: [],
+        url: 'https://jsonplaceholder.typicode.com/users'
+      }),
+      methods: {
+        openUser(user) {
+          this.$router.push('/users/' + user)
         }
+      }
     }
 </script>
 
