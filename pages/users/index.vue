@@ -11,15 +11,26 @@
 
 <script>
     export default {
+      /*
       async asyncData({$axios}) {
         const usersList = await $axios.$get('https://jsonplaceholder.typicode.com/users');
         return {usersList}
       },
+      */
+      async fetch({store}) {
+        if(store.getters['users/users'].length === 0) {
+          await store.dispatch('users/fetch');
+        }
+      },
       name: "index",
       data: () => ({
-        usersList: [],
         url: 'https://jsonplaceholder.typicode.com/users'
       }),
+      computed: {
+        usersList() {
+          return this.$store.getters['users/users']
+        }
+      },
       methods: {
         openUser(user) {
           this.$router.push('/users/' + user)

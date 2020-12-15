@@ -16,5 +16,5 @@ export const actions = {
 }
 
 export const getters = {
-  users: []
+  users: s => s.users
 }

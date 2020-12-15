@@ -1,7 +1,10 @@
 <template>
     <div>
       <h1>Login</h1>
-      <form>
+      <div class="alert alert-danger" v-if="$route.query.message">
+        {{ $route.query.message }}
+      </div>
+      <form @submit.prevent="onSubmit">
         <div>
           <input type="text" class="form-control">
         </div>
@@ -15,8 +18,14 @@
 
 <script>
     export default {
-        name: 'login',
-        layout: 'empty'
+      name: 'login',
+      layout: 'empty',
+      methods: {
+        onSubmit() {
+          this.$store.dispatch('login');
+          this.$router.push('/');
+        }
+      }
     }
 </script>
 
