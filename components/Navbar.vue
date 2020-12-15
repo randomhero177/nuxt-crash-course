@@ -13,6 +13,9 @@
         <li class="nav-item">
           <nuxt-link class="nav-link" active-class="active" to="/users">Users</nuxt-link>
         </li>
+        <li class="nav-item">
+          <nuxt-link class="nav-link" active-class="active" to="/login">Login</nuxt-link>
+        </li>
       </ul>
     </div>
   </nav>
