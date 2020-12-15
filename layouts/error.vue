@@ -1,0 +1,8 @@
+<template>
+    <section>
+      <div class="container">
+        <h1>Error</h1>
+      </div>
+    </section>
+</template>
+

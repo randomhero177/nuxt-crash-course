@@ -4,11 +4,14 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <nuxt-link class="nav-link" to="/">Home</nuxt-link>
+        <li class="nav-item">
+          <nuxt-link exact class="nav-link" active-class="active" to="/">Home</nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link class="nav-link" to="/about">About</nuxt-link>
+          <nuxt-link class="nav-link" active-class="active" to="/about">About</nuxt-link>
+        </li>
+        <li class="nav-item">
+          <nuxt-link class="nav-link" active-class="active" to="/users">Users</nuxt-link>
         </li>
       </ul>
     </div>
