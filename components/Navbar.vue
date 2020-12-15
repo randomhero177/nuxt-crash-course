@@ -5,10 +5,10 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Home</a>
+          <nuxt-link class="nav-link" to="/">Home</nuxt-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/about">About</a>
+          <nuxt-link class="nav-link" to="/about">About</nuxt-link>
         </li>
       </ul>
     </div>
